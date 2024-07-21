@@ -1,0 +1,33 @@
+2024-07-21 10:08:38,519 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 642583960 Bytes (720371712)
+2024-07-21 10:08:41,361 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 294047944 Bytes (720371712)
+2024-07-21 10:08:41,927 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-07-21 10:08:41,927 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-07-21 10:08:41,927 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-07-21 10:08:41,928 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-07-21 10:08:41,928 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-07-21 10:08:41,930 [INFO] CodeGenerator:799 - code generatio: config db path: C:\Users\Kago\Desktop\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2024-07-21 10:08:42,170 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\MXTmpFiles\license.tmp_save
+2024-07-21 10:08:42,558 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\MXTmpFiles\license.tmp
+2024-07-21 10:08:42,633 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\MXTmpFiles\gpio.tmp_save
+2024-07-21 10:08:43,064 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\MXTmpFiles\gpio.tmp
+2024-07-21 10:08:43,225 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Src\stm32f4xx_it.c_save
+2024-07-21 10:08:43,828 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Src\stm32f4xx_it.c
+2024-07-21 10:08:43,843 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Inc\stm32f4xx_it.h_save
+2024-07-21 10:08:44,088 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Inc\stm32f4xx_it.h
+2024-07-21 10:08:44,123 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Src\stm32f4xx_hal_msp.c_save
+2024-07-21 10:08:44,489 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Src\stm32f4xx_hal_msp.c
+2024-07-21 10:08:44,502 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\MXTmpFiles\system.tmp_save
+2024-07-21 10:08:44,881 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\MXTmpFiles\system.tmp
+2024-07-21 10:08:44,900 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-07-21 10:08:45,136 [INFO] CodeEngine:335 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Inc\stm32f4xx_hal_conf.h
+2024-07-21 10:08:45,216 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Inc\main.h_save
+2024-07-21 10:08:45,487 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Inc\main.h
+2024-07-21 10:08:45,512 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Src\main.c_save
+2024-07-21 10:08:45,948 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\Core\Src\main.c
+2024-07-21 10:08:47,062 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 346mS.
+2024-07-21 10:08:47,069 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2024-07-21 10:08:47,867 [INFO] ConfigFileManager:1457 - The Die is : DIE433
+2024-07-21 10:08:51,624 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 4554mS.
+2024-07-21 10:08:51,629 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 3mS.
+2024-07-21 10:08:51,637 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2024-07-21 10:09:07,935 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,568x225,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
