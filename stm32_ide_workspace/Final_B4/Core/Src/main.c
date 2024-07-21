@@ -332,3 +332,18 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+
+prompt_and_receive("Enter Inlet Motor Speed PWM (0-3): ", &inlet_pwm);
+  prompt_and_receive("Enter Zone 1 Motor Speed PWM (0-3): ", &zone1_pwm);
+  prompt_and_receive("Enter Zone 2 Motor Speed PWM (0-3): ", &zone2_pwm);
+  prompt_and_receive("Enter Zone 3 Motor Speed PWM (0-3): ", &zone3_pwm);
+  prompt_and_receive("Enter Current Wall Clock Time (00-23): ", &current_time);
+  prompt_and_receive("Enter Inlet Wall Clock Start Time (00-23): ", &inlet_start);
+  prompt_and_receive("Enter Inlet Wall Clock Stop Time (00-23): ", &inlet_stop);
+  prompt_and_receive("Enter Zone 1 Wall Clock Start Time (00-23): ", &zone1_start);
+  prompt_and_receive("Enter Zone 1 Wall Clock Stop Time (00-23): ", &zone1_stop);
+  prompt_and_receive("Enter Zone 2 Wall Clock Start Time (00-23): ", &zone2_start);
+  prompt_and_receive("Enter Zone 2 Wall Clock Stop Time (00-23): ", &zone2_stop);
+  prompt_and_receive("Enter Zone 3 Wall Clock Start Time (00-23): ", &zone3_start);
+  prompt_and_receive("Enter Zone 3 Wall Clock Stop Time (00-23): ", &zone3_stop);

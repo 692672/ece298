@@ -105,9 +105,9 @@ void handle_setup_mode(void)
 	prompt_and_receive("Enter Zone 3 Wall Clock Start Time (00-23): ", &zone3_start);
 	prompt_and_receive("Enter Zone 3 Wall Clock Stop Time (00-23): ", &zone3_stop);
 
-//  snprintf(response, BUFFER_SIZE, "Configuration Completed:\r\nInlet PWM: %d\r\nZone 1 PWM: %d\r\nZone 2 PWM: %d\r\nZone 3 PWM: %d\r\nCurrent Time: %d\r\nInlet Start: %d\r\nInlet Stop: %d\r\nZone 1 Start: %d\r\nZone 1 Stop: %d\r\nZone 2 Start: %d\r\nZone 2 Stop: %d\r\nZone 3 Start: %d\r\nZone 3 Stop: %d\r\n",
-//           inlet_pwm, zone1_pwm, zone2_pwm, zone3_pwm, current_time, inlet_start, inlet_stop, zone1_start, zone1_stop, zone2_start, zone2_stop, zone3_start, zone3_stop);
-//  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+  snprintf(response, BUFFER_SIZE, "Configuration Completed:\r\nInlet PWM: %d\r\nZone 1 PWM: %d\r\nZone 2 PWM: %d\r\nZone 3 PWM: %d\r\nCurrent Time: %d\r\nInlet Start: %d\r\nInlet Stop: %d\r\nZone 1 Start: %d\r\nZone 1 Stop: %d\r\nZone 2 Start: %d\r\nZone 2 Stop: %d\r\nZone 3 Start: %d\r\nZone 3 Stop: %d\r\n",
+           inlet_pwm, zone1_pwm, zone2_pwm, zone3_pwm, current_time, inlet_start, inlet_stop, zone1_start, zone1_stop, zone2_start, zone2_stop, zone3_start, zone3_stop);
+  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
 }
 
 void prompt_and_receive(const char *prompt, int *value)
@@ -118,8 +118,8 @@ void prompt_and_receive(const char *prompt, int *value)
   rcv_intpt_flag = 0;
   while (!rcv_intpt_flag); // Wait for input
   sscanf(buffer, "%d", value);
-//  snprintf(response, BUFFER_SIZE, "Received: %d\r\n", *value);
-//  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+  snprintf(response, BUFFER_SIZE, "Received: %d\r\n", *value);
+  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
 }
 
 /* USER CODE END 0 */

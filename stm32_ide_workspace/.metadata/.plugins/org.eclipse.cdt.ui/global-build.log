@@ -934,3 +934,45 @@ arm-none-eabi-size   Final_Demo_Kago.elf
   17944	    100	   2108	  20152	   4eb8	Final_Demo_Kago.elf
 Finished building: default.size.stdout
  
+10:50:20 **** Incremental Build of configuration Debug for project Final_Demo_Kago ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'handle_setup_mode':
+../Core/Src/main.c:108:184: warning: '
+Inlet Stop: ' directive output truncated writing 14 bytes into a region of size between 0 and 12 [-Wformat-truncation=]
+  108 |   snprintf(response, BUFFER_SIZE, "Configuration Completed:\r\nInlet PWM: %d\r\nZone 1 PWM: %d\r\nZone 2 PWM: %d\r\nZone 3 PWM: %d\r\nCurrent Time: %d\r\nInlet Start: %d\r\nInlet Stop: %d\r\nZone 1 Start: %d\r\nZone 1 Stop: %d\r\nZone 2 Start: %d\r\nZone 2 Stop: %d\r\nZone 3 Start: %d\r\nZone 3 Stop: %d\r\n",
+      |                                                                                                                                                                          ~~~~~~~~~~~~~~^~
+../Core/Src/main.c:108:3: note: 'snprintf' output between 233 and 363 bytes into a destination of size 128
+  108 |   snprintf(response, BUFFER_SIZE, "Configuration Completed:\r\nInlet PWM: %d\r\nZone 1 PWM: %d\r\nZone 2 PWM: %d\r\nZone 3 PWM: %d\r\nCurrent Time: %d\r\nInlet Start: %d\r\nInlet Stop: %d\r\nZone 1 Start: %d\r\nZone 1 Stop: %d\r\nZone 2 Start: %d\r\nZone 2 Stop: %d\r\nZone 3 Start: %d\r\nZone 3 Stop: %d\r\n",
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  109 |            inlet_pwm, zone1_pwm, zone2_pwm, zone3_pwm, current_time, inlet_start, inlet_stop, zone1_start, zone1_stop, zone2_start, zone2_stop, zone3_start, zone3_stop);
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Final_Demo_Kago.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Final_Demo_Kago.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Final_Demo_Kago.elf
+ 
+arm-none-eabi-size   Final_Demo_Kago.elf 
+arm-none-eabi-objdump -h -S  Final_Demo_Kago.elf  > "Final_Demo_Kago.list"
+   text	   data	    bss	    dec	    hex	filename
+  17984	    100	   2108	  20192	   4ee0	Final_Demo_Kago.elf
+Finished building: default.size.stdout
+ 
+Finished building: Final_Demo_Kago.list
+ 
+10:54:13 **** Incremental Build of configuration Debug for project Final_Demo_Kago ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'prompt_and_receive':
+../Core/Src/main.c:115:8: warning: unused variable 'response' [-Wunused-variable]
+  115 |   char response[BUFFER_SIZE];
+      |        ^~~~~~~~
+arm-none-eabi-gcc -o "Final_Demo_Kago.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Final_Demo_Kago.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Final_Demo_Kago.elf
+ 
+arm-none-eabi-size   Final_Demo_Kago.elf 
+arm-none-eabi-objdump -h -S  Final_Demo_Kago.elf  > "Final_Demo_Kago.list"
+   text	   data	    bss	    dec	    hex	filename
+  17528	    100	   2108	  19736	   4d18	Final_Demo_Kago.elf
+Finished building: default.size.stdout
+ 
+Finished building: Final_Demo_Kago.list
+ 

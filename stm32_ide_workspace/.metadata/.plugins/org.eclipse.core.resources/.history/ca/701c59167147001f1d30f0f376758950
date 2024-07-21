@@ -118,8 +118,8 @@ void prompt_and_receive(const char *prompt, int *value)
   rcv_intpt_flag = 0;
   while (!rcv_intpt_flag); // Wait for input
   sscanf(buffer, "%d", value);
-//  snprintf(response, BUFFER_SIZE, "Received: %d\r\n", *value);
-//  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+  snprintf(response, BUFFER_SIZE, "Received: %d\r\n", *value);
+  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
 }
 
 /* USER CODE END 0 */

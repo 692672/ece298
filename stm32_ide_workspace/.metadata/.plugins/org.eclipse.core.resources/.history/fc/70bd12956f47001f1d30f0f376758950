@@ -91,23 +91,23 @@ void handle_setup_mode(void)
   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
 
-  	prompt_and_receive("Enter Inlet Motor Speed PWM (0-3): ", &inlet_pwm);
-	prompt_and_receive("Enter Zone 1 Motor Speed PWM (0-3): ", &zone1_pwm);
-	prompt_and_receive("Enter Zone 2 Motor Speed PWM (0-3): ", &zone2_pwm);
-	prompt_and_receive("Enter Zone 3 Motor Speed PWM (0-3): ", &zone3_pwm);
-	prompt_and_receive("Enter Current Wall Clock Time (00-23): ", &current_time);
-	prompt_and_receive("Enter Inlet Wall Clock Start Time (00-23): ", &inlet_start);
-	prompt_and_receive("Enter Inlet Wall Clock Stop Time (00-23): ", &inlet_stop);
-	prompt_and_receive("Enter Zone 1 Wall Clock Start Time (00-23): ", &zone1_start);
-	prompt_and_receive("Enter Zone 1 Wall Clock Stop Time (00-23): ", &zone1_stop);
-	prompt_and_receive("Enter Zone 2 Wall Clock Start Time (00-23): ", &zone2_start);
-	prompt_and_receive("Enter Zone 2 Wall Clock Stop Time (00-23): ", &zone2_stop);
-	prompt_and_receive("Enter Zone 3 Wall Clock Start Time (00-23): ", &zone3_start);
-	prompt_and_receive("Enter Zone 3 Wall Clock Stop Time (00-23): ", &zone3_stop);
+  prompt_and_receive("Enter Inlet Motor Speed PWM (0-3):\r\n", &inlet_pwm);
+  prompt_and_receive("Enter Zone 1 Motor Speed PWM (0-3):\r\n", &zone1_pwm);
+  prompt_and_receive("Enter Zone 2 Motor Speed PWM (0-3):\r\n", &zone2_pwm);
+  prompt_and_receive("Enter Zone 3 Motor Speed PWM (0-3):\r\n", &zone3_pwm);
+  prompt_and_receive("Enter Current Wall Clock Time (00-23):\r\n", &current_time);
+  prompt_and_receive("Enter Inlet Wall Clock Start Time (00-23):\r\n", &inlet_start);
+  prompt_and_receive("Enter Inlet Wall Clock Stop Time (00-23):\r\n", &inlet_stop);
+  prompt_and_receive("Enter Zone 1 Wall Clock Start Time (00-23):\r\n", &zone1_start);
+  prompt_and_receive("Enter Zone 1 Wall Clock Stop Time (00-23):\r\n", &zone1_stop);
+  prompt_and_receive("Enter Zone 2 Wall Clock Start Time (00-23):\r\n", &zone2_start);
+  prompt_and_receive("Enter Zone 2 Wall Clock Stop Time (00-23):\r\n", &zone2_stop);
+  prompt_and_receive("Enter Zone 3 Wall Clock Start Time (00-23):\r\n", &zone3_start);
+  prompt_and_receive("Enter Zone 3 Wall Clock Stop Time (00-23):\r\n", &zone3_stop);
 
-//  snprintf(response, BUFFER_SIZE, "Configuration Completed:\r\nInlet PWM: %d\r\nZone 1 PWM: %d\r\nZone 2 PWM: %d\r\nZone 3 PWM: %d\r\nCurrent Time: %d\r\nInlet Start: %d\r\nInlet Stop: %d\r\nZone 1 Start: %d\r\nZone 1 Stop: %d\r\nZone 2 Start: %d\r\nZone 2 Stop: %d\r\nZone 3 Start: %d\r\nZone 3 Stop: %d\r\n",
-//           inlet_pwm, zone1_pwm, zone2_pwm, zone3_pwm, current_time, inlet_start, inlet_stop, zone1_start, zone1_stop, zone2_start, zone2_stop, zone3_start, zone3_stop);
-//  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+  snprintf(response, BUFFER_SIZE, "Configuration Completed:\r\nInlet PWM: %d\r\nZone 1 PWM: %d\r\nZone 2 PWM: %d\r\nZone 3 PWM: %d\r\nCurrent Time: %d\r\nInlet Start: %d\r\nInlet Stop: %d\r\nZone 1 Start: %d\r\nZone 1 Stop: %d\r\nZone 2 Start: %d\r\nZone 2 Stop: %d\r\nZone 3 Start: %d\r\nZone 3 Stop: %d\r\n",
+           inlet_pwm, zone1_pwm, zone2_pwm, zone3_pwm, current_time, inlet_start, inlet_stop, zone1_start, zone1_stop, zone2_start, zone2_stop, zone3_start, zone3_stop);
+  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
 }
 
 void prompt_and_receive(const char *prompt, int *value)
@@ -118,8 +118,8 @@ void prompt_and_receive(const char *prompt, int *value)
   rcv_intpt_flag = 0;
   while (!rcv_intpt_flag); // Wait for input
   sscanf(buffer, "%d", value);
-//  snprintf(response, BUFFER_SIZE, "Received: %d\r\n", *value);
-//  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+  snprintf(response, BUFFER_SIZE, "Received: %d\r\n", *value);
+  HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
 }
 
 /* USER CODE END 0 */
@@ -158,10 +158,6 @@ int main(void)
 
   // Turn off the green LED (PA5) at startup
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-
-  // clear the terminal
-  const char clear_screen[] = "\x1b[2J\x1b[H";
-  HAL_UART_Transmit(&huart6, (uint8_t *)clear_screen, strlen(clear_screen), HAL_MAX_DELAY);
 
   // Start receiving data via interrupt
   HAL_UART_Receive_IT(&huart6, &rx_data, 1);
