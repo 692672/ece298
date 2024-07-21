@@ -1,0 +1,17 @@
+10:03:41 **** Incremental Build of configuration Debug for project TimerBoard_BCD ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TimerBoard_BCD.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\TimerBoard_BCD\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TimerBoard_BCD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TimerBoard_BCD.elf
+ 
+arm-none-eabi-size   TimerBoard_BCD.elf 
+arm-none-eabi-objdump -h -S  TimerBoard_BCD.elf  > "TimerBoard_BCD.list"
+   text	   data	    bss	    dec	    hex	filename
+   8028	     20	   1636	   9684	   25d4	TimerBoard_BCD.elf
+Finished building: default.size.stdout
+ 
+Finished building: TimerBoard_BCD.list
+ 
+
+10:03:43 Build Finished. 0 errors, 0 warnings. (took 1s.246ms)
+

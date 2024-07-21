@@ -1,0 +1,17 @@
+11:14:21 **** Incremental Build of configuration Debug for project B2_LED_PushButton ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "B2_LED_PushButton.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\B2_LED_PushButton\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="B2_LED_PushButton.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: B2_LED_PushButton.elf
+ 
+arm-none-eabi-size   B2_LED_PushButton.elf 
+arm-none-eabi-objdump -h -S  B2_LED_PushButton.elf  > "B2_LED_PushButton.list"
+   text	   data	    bss	    dec	    hex	filename
+   7864	     20	   1644	   9528	   2538	B2_LED_PushButton.elf
+Finished building: default.size.stdout
+ 
+Finished building: B2_LED_PushButton.list
+ 
+
+11:14:23 Build Finished. 0 errors, 0 warnings. (took 1s.340ms)
+

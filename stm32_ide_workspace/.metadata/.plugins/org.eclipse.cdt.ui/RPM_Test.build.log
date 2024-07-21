@@ -1,0 +1,40 @@
+18:28:16 **** Incremental Build of configuration Debug for project RPM_Test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:113:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  113 |           sprintf((char*)txd_msg_buffer,"RPM tick Value: %d\n",rpm_tick_count);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:113:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  113 |           sprintf((char*)txd_msg_buffer,"RPM tick Value: %d\n",rpm_tick_count);
+      |           ^~~~~~~
+../Core/Src/main.c:113:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:114:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  114 |           HAL_UART_Transmit(&huart6,txd_msg_buffer, strlen((char*)txd_msg_buffer), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:114:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  114 |           HAL_UART_Transmit(&huart6,txd_msg_buffer, strlen((char*)txd_msg_buffer), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:114:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "RPM_Test.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\RPM_Test\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RPM_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RPM_Test.elf
+ 
+arm-none-eabi-size   RPM_Test.elf 
+arm-none-eabi-objdump -h -S  RPM_Test.elf  > "RPM_Test.list"
+   text	   data	    bss	    dec	    hex	filename
+  11400	    100	   2044	  13544	   34e8	RPM_Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: RPM_Test.list
+ 
+
+18:28:17 Build Finished. 0 errors, 4 warnings. (took 1s.276ms)
+
