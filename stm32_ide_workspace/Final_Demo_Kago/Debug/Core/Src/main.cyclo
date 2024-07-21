@@ -1,4 +1,4 @@
-../Core/Src/main.c:65:6:HAL_UART_RxCpltCallback	3
+../Core/Src/main.c:65:6:HAL_UART_RxCpltCallback	4
 ../Core/Src/main.c:85:6:handle_setup_mode	1
 ../Core/Src/main.c:113:6:prompt_and_receive	2
 ../Core/Src/main.c:131:5:main	1

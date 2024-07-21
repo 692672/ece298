@@ -64,7 +64,7 @@ void prompt_and_receive(const char *prompt, int *value);
 /* USER CODE BEGIN 0 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-  if (huart->Instance == USART6 && HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) != GPIO_PIN_SET)
+  if (huart->Instance == USART6 && )
   {
     if (rx_data == '\r')
     {
