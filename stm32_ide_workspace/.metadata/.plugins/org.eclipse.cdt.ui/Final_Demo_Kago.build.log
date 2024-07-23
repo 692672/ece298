@@ -1,10 +1,68 @@
-11:07:37 **** Incremental Build of configuration Debug for project Final_Demo_Kago ****
+16:42:23 **** Incremental Build of configuration Debug for project Final_Demo_Kago ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'handle_setup_mode':
+../Core/Src/main.c:92:3: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+   92 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
+      |   ^~~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:92:3: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+   92 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
+      |   ^~~~~~~~
+../Core/Src/main.c:92:3: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/main.c:93:51: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   93 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+      |                                                   ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:93:51: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   93 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+      |                                                   ^~~~~~
+../Core/Src/main.c:93:51: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:94:56: warning: unknown conversion type character 'P' in format [-Wformat=]
+   94 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+      |                                                        ^
+../Core/Src/main.c:94:69: warning: unknown conversion type character 'P' in format [-Wformat=]
+   94 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+      |                                                                     ^
+../Core/Src/main.c:94:82: warning: unknown conversion type character 'P' in format [-Wformat=]
+   94 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+      |                                                                                  ^
+../Core/Src/main.c: In function 'prompt_and_receive':
+../Core/Src/main.c:123:49: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  123 |   HAL_UART_Transmit(&huart6, (uint8_t *)prompt, strlen(prompt), HAL_MAX_DELAY);
+      |                                                 ^~~~~~
+../Core/Src/main.c:123:49: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:126:3: warning: implicit declaration of function 'sscanf' [-Wimplicit-function-declaration]
+  126 |   sscanf(buffer, "%d", value);
+      |   ^~~~~~
+../Core/Src/main.c:126:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+../Core/Src/main.c:126:3: warning: incompatible implicit declaration of built-in function 'sscanf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:126:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+../Core/Src/main.c:121:8: warning: unused variable 'response' [-Wunused-variable]
+  121 |   char response[BUFFER_SIZE];
+      |        ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:170:55: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  170 |   HAL_UART_Transmit(&huart6, (uint8_t *)clear_screen, strlen(clear_screen), HAL_MAX_DELAY);
+      |                                                       ^~~~~~
+../Core/Src/main.c:170:55: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Final_Demo_Kago.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo_Kago\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Final_Demo_Kago.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Final_Demo_Kago.elf
+ 
 arm-none-eabi-size   Final_Demo_Kago.elf 
+arm-none-eabi-objdump -h -S  Final_Demo_Kago.elf  > "Final_Demo_Kago.list"
    text	   data	    bss	    dec	    hex	filename
-  17592	    100	   2108	  19800	   4d58	Final_Demo_Kago.elf
+  19952	    100	   2180	  22232	   56d8	Final_Demo_Kago.elf
 Finished building: default.size.stdout
  
+Finished building: Final_Demo_Kago.list
+ 
 
-11:07:38 Build Finished. 0 errors, 0 warnings. (took 542ms)
+16:42:25 Build Finished. 0 errors, 12 warnings. (took 1s.647ms)
 

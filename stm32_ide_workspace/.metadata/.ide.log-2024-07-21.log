@@ -1,0 +1,76 @@
+2024-07-22 00:00:45,484 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,700x402,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-07-22 00:00:47,455 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-07-22 00:00:54,432 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-07-22 00:01:00,493 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-07-22 00:01:01,635 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-07-22 00:01:11,682 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 745582848 Bytes (1066401792)
+2024-07-22 00:01:12,368 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 800631040 Bytes (1066401792)
+2024-07-22 00:01:12,581 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-07-22 00:01:12,581 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-07-22 00:01:12,581 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-07-22 00:01:12,581 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-07-22 00:01:12,582 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-07-22 00:01:12,582 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-07-22 00:01:12,583 [INFO] CodeGenerator:799 - code generatio: config db path: C:\Users\Kago\Desktop\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2024-07-22 00:01:12,810 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\license.tmp_save
+2024-07-22 00:01:12,950 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\license.tmp
+2024-07-22 00:01:12,969 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\gpio.tmp_save
+2024-07-22 00:01:13,090 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\gpio.tmp
+2024-07-22 00:01:13,150 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_it.c_save
+2024-07-22 00:01:13,291 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_it.c
+2024-07-22 00:01:13,300 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_it.h_save
+2024-07-22 00:01:13,434 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_it.h
+2024-07-22 00:01:13,449 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_hal_msp.c_save
+2024-07-22 00:01:13,641 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_hal_msp.c
+2024-07-22 00:01:13,647 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\system.tmp_save
+2024-07-22 00:01:13,760 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\system.tmp
+2024-07-22 00:01:13,771 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-07-22 00:01:13,904 [INFO] CodeEngine:335 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_hal_conf.h
+2024-07-22 00:01:13,922 [WARN] IPConfigManager:3431 - IP not found : TIM
+2024-07-22 00:01:13,923 [WARN] CodeGenerator:3764 - IP not found : null
+2024-07-22 00:01:13,930 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\main.h_save
+2024-07-22 00:01:14,050 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\main.h
+2024-07-22 00:01:14,055 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\main.c_save
+2024-07-22 00:01:14,221 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\main.c
+2024-07-22 00:01:14,724 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 132mS.
+2024-07-22 00:01:14,727 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2024-07-22 00:01:14,938 [INFO] ConfigFileManager:1457 - The Die is : DIE433
+2024-07-22 00:01:16,502 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1775mS.
+2024-07-22 00:01:16,503 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
+2024-07-22 00:01:16,505 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2024-07-22 00:05:54,628 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-07-22 00:05:57,357 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 451564176 Bytes (1073741824)
+2024-07-22 00:05:58,030 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 481966080 Bytes (1073741824)
+2024-07-22 00:05:58,246 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-07-22 00:05:58,246 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-07-22 00:05:58,246 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-07-22 00:05:58,246 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-07-22 00:05:58,246 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-07-22 00:05:58,246 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-07-22 00:05:58,247 [INFO] CodeGenerator:799 - code generatio: config db path: C:\Users\Kago\Desktop\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2024-07-22 00:05:58,461 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\license.tmp_save
+2024-07-22 00:05:58,589 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\license.tmp
+2024-07-22 00:05:58,604 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\gpio.tmp_save
+2024-07-22 00:05:58,723 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\gpio.tmp
+2024-07-22 00:05:58,782 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_it.c_save
+2024-07-22 00:05:58,902 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_it.c
+2024-07-22 00:05:58,909 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_it.h_save
+2024-07-22 00:05:59,042 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_it.h
+2024-07-22 00:05:59,058 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_hal_msp.c_save
+2024-07-22 00:05:59,254 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\stm32f4xx_hal_msp.c
+2024-07-22 00:05:59,259 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\system.tmp_save
+2024-07-22 00:05:59,378 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\MXTmpFiles\system.tmp
+2024-07-22 00:05:59,387 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-07-22 00:05:59,521 [INFO] CodeEngine:335 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\stm32f4xx_hal_conf.h
+2024-07-22 00:05:59,540 [WARN] IPConfigManager:3431 - IP not found : TIM
+2024-07-22 00:05:59,541 [WARN] CodeGenerator:3764 - IP not found : null
+2024-07-22 00:05:59,549 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\main.h_save
+2024-07-22 00:05:59,678 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Inc\main.h
+2024-07-22 00:05:59,685 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\main.c_save
+2024-07-22 00:05:59,851 [INFO] CodeEngine:279 - Generated code: C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\HCSR04_Test\Core\Src\main.c
+2024-07-22 00:06:00,310 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 127mS.
+2024-07-22 00:06:00,313 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2024-07-22 00:06:00,528 [INFO] ConfigFileManager:1457 - The Die is : DIE433
+2024-07-22 00:06:02,055 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1742mS.
+2024-07-22 00:06:02,056 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2024-07-22 00:06:02,061 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.

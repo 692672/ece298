@@ -1,0 +1,805 @@
+19:16:28 **** Build of configuration Debug for project TEST ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f401retx.d" -MT"Core/Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f401retx.o" "../Core/Startup/startup_stm32f401retx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c:48:1: error: unknown type name 'ADC_HandleTypeDef'; did you mean 'UART_HandleTypeDef'?
+   48 | ADC_HandleTypeDef hadc1;
+      | ^~~~~~~~~~~~~~~~~
+      | UART_HandleTypeDef
+../Core/Src/main.c:50:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+   50 | TIM_HandleTypeDef htim1;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/main.c:51:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+   51 | TIM_HandleTypeDef htim2;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/main.c:52:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+   52 | TIM_HandleTypeDef htim3;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/main.c:53:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+   53 | TIM_HandleTypeDef htim4;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/main.c:54:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+   54 | TIM_HandleTypeDef htim5;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:109:24: error: 'RPM_TICK_Pin' undeclared (first use in this function)
+  109 |   else if (GPIO_Pin == RPM_TICK_Pin) {
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.c:109:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'handle_setup_mode':
+../Core/Src/main.c:145:3: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+  145 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
+      |   ^~~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:145:3: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+  145 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
+      |   ^~~~~~~~
+../Core/Src/main.c:145:3: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/main.c:146:51: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  146 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+      |                                                   ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:146:51: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  146 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+      |                                                   ^~~~~~
+../Core/Src/main.c:146:51: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:147:56: warning: unknown conversion type character 'P' in format [-Wformat=]
+  147 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+      |                                                        ^
+../Core/Src/main.c:147:69: warning: unknown conversion type character 'P' in format [-Wformat=]
+  147 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+      |                                                                     ^
+../Core/Src/main.c:147:82: warning: unknown conversion type character 'P' in format [-Wformat=]
+  147 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+      |                                                                                  ^
+../Core/Src/main.c:151:61: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  151 |   prompt_and_receive("Enter Inlet Motor Speed PWM (0-3): ", &inlet_pwm);
+      |                                                             ^~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:152:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  152 |   prompt_and_receive("Enter Zone 1 Motor Speed PWM (0-3): ", &zone1_pwm);
+      |                                                              ^~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:153:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  153 |   prompt_and_receive("Enter Zone 2 Motor Speed PWM (0-3): ", &zone2_pwm);
+      |                                                              ^~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:154:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  154 |   prompt_and_receive("Enter Zone 3 Motor Speed PWM (0-3): ", &zone3_pwm);
+      |                                                              ^~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:159:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  159 |   prompt_and_receive("Enter Inlet Wall Clock Start Time (00-23): ", &inlet_start);
+      |                                                                     ^~~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:160:68: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  160 |   prompt_and_receive("Enter Inlet Wall Clock Stop Time (00-23): ", &inlet_stop);
+      |                                                                    ^~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:161:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  161 |   prompt_and_receive("Enter Zone 1 Wall Clock Start Time (00-23): ", &zone1_start);
+      |                                                                      ^~~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:162:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  162 |   prompt_and_receive("Enter Zone 1 Wall Clock Stop Time (00-23): ", &zone1_stop);
+      |                                                                     ^~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:163:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  163 |   prompt_and_receive("Enter Zone 2 Wall Clock Start Time (00-23): ", &zone2_start);
+      |                                                                      ^~~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:164:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  164 |   prompt_and_receive("Enter Zone 2 Wall Clock Stop Time (00-23): ", &zone2_stop);
+      |                                                                     ^~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:165:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  165 |   prompt_and_receive("Enter Zone 3 Wall Clock Start Time (00-23): ", &zone3_start);
+      |                                                                      ^~~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c:166:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  166 |   prompt_and_receive("Enter Zone 3 Wall Clock Stop Time (00-23): ", &zone3_stop);
+      |                                                                     ^~~~~~~~~~~
+../Core/Src/main.c:93:50: note: expected 'int *' but argument is of type 'volatile int *'
+   93 | void prompt_and_receive(const char *prompt, int *value);
+      |                                             ~~~~~^~~~~
+../Core/Src/main.c: In function 'prompt_and_receive':
+../Core/Src/main.c:177:49: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  177 |   HAL_UART_Transmit(&huart6, (uint8_t *)prompt, strlen(prompt), HAL_MAX_DELAY);
+      |                                                 ^~~~~~
+../Core/Src/main.c:177:49: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:180:3: warning: implicit declaration of function 'sscanf' [-Wimplicit-function-declaration]
+  180 |   sscanf(buffer, "%d", value); // load value with the inputted characters
+      |   ^~~~~~
+../Core/Src/main.c:180:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+../Core/Src/main.c:180:3: warning: incompatible implicit declaration of built-in function 'sscanf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:180:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+../Core/Src/main.c:175:8: warning: unused variable 'response' [-Wunused-variable]
+  175 |   char response[BUFFER_SIZE];
+      |        ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:183:36: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+  183 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |                                    ^~~~~~~~~~~~~~~~~
+      |                                    DMA_HandleTypeDef
+../Core/Src/main.c:223:33: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+  223 | void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 DMA_HandleTypeDef
+../Core/Src/main.c: In function 'update_display':
+../Core/Src/main.c:262:5: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  262 |     strcpy(active_zone, "Inlet");
+      |     ^~~~~~
+../Core/Src/main.c:262:5: note: include '<string.h>' or provide a declaration of 'strcpy'
+../Core/Src/main.c:262:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:262:5: note: include '<string.h>' or provide a declaration of 'strcpy'
+../Core/Src/main.c:265:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
+  265 |     strcpy(active_zone, "Zone 1");
+      |     ^~~~~~
+../Core/Src/main.c:265:5: note: include '<string.h>' or provide a declaration of 'strcpy'
+../Core/Src/main.c:268:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
+  268 |     strcpy(active_zone, "Zone 2");
+      |     ^~~~~~
+../Core/Src/main.c:268:5: note: include '<string.h>' or provide a declaration of 'strcpy'
+../Core/Src/main.c:271:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
+  271 |     strcpy(active_zone, "Zone 3");
+      |     ^~~~~~
+../Core/Src/main.c:271:5: note: include '<string.h>' or provide a declaration of 'strcpy'
+../Core/Src/main.c:293:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  293 |   sprintf(txd_msg_buffer, "%d:00 | %s | %d%% | %d | %d%%",
+      |   ^~~~~~~
+../Core/Src/main.c:293:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:293:3: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:293:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:293:49: warning: format '%d' expects argument of type 'int', but argument 6 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  293 |   sprintf(txd_msg_buffer, "%d:00 | %s | %d%% | %d | %d%%",
+      |                                                ~^
+      |                                                 |
+      |                                                 int
+      |                                                %ld
+  294 |           hours, active_zone, pwm_percent, g_current_rpm, g_water_depth);
+      |                                            ~~~~~~~~~~~~~
+      |                                            |
+      |                                            uint32_t {aka long unsigned int}
+../Core/Src/main.c:295:56: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  295 |   HAL_UART_Transmit(&huart6, (uint8_t*)txd_msg_buffer, strlen(txd_msg_buffer), 1000);
+      |                                                        ^~~~~~
+../Core/Src/main.c:295:56: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:296:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  296 |   HAL_UART_Transmit(&huart6, "\n", 1, 1000);
+      |                              ^~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:258:7: warning: unused variable 'motor_rpm' [-Wunused-variable]
+  258 |   int motor_rpm = 0;
+      |       ^~~~~~~~~
+../Core/Src/main.c: In function 'get_adc_value':
+../Core/Src/main.c:300:5: warning: implicit declaration of function 'HAL_ADC_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+  300 |     HAL_ADC_Start(&hadc1);
+      |     ^~~~~~~~~~~~~
+      |     HAL_DMA_Start
+../Core/Src/main.c:302:5: warning: implicit declaration of function 'HAL_ADC_PollForConversion' [-Wimplicit-function-declaration]
+  302 |     HAL_ADC_PollForConversion(&hadc1, 1000);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:304:23: warning: implicit declaration of function 'HAL_ADC_GetValue' [-Wimplicit-function-declaration]
+  304 |     uint8_t ADC_CH9 = HAL_ADC_GetValue(&hadc1);
+      |                       ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:306:5: warning: implicit declaration of function 'HAL_ADC_Stop'; did you mean 'HAL_UART_DMAStop'? [-Wimplicit-function-declaration]
+  306 |     HAL_ADC_Stop(&hadc1);
+      |     ^~~~~~~~~~~~
+      |     HAL_UART_DMAStop
+../Core/Src/main.c: In function 'update_current_water_reservoir_depth':
+../Core/Src/main.c:319:21: error: 'HCSR04_TRIG_GPIO_Port' undeclared (first use in this function)
+  319 |   HAL_GPIO_WritePin(HCSR04_TRIG_GPIO_Port, HCSR04_TRIG_Pin, GPIO_PIN_SET);
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:319:44: error: 'HCSR04_TRIG_Pin' undeclared (first use in this function)
+  319 |   HAL_GPIO_WritePin(HCSR04_TRIG_GPIO_Port, HCSR04_TRIG_Pin, GPIO_PIN_SET);
+      |                                            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:328:5: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  328 |     sprintf(txd_msg_buffer, "Water Depth: %d\n", g_water_depth);
+      |     ^~~~~~~
+../Core/Src/main.c:328:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:329:58: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  329 |     HAL_UART_Transmit(&huart6, (uint8_t*)txd_msg_buffer, strlen(txd_msg_buffer), 1000);
+      |                                                          ^~~~~~
+../Core/Src/main.c:329:58: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:316:12: warning: unused variable 'distance' [-Wunused-variable]
+  316 |   uint32_t distance = 0;
+      |            ^~~~~~~~
+../Core/Src/main.c:315:12: warning: unused variable 'sensor_time' [-Wunused-variable]
+  315 |   uint32_t sensor_time = 0;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:314:12: warning: unused variable 'local_time' [-Wunused-variable]
+  314 |   uint32_t local_time = 0;
+      |            ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:407:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  407 |   HAL_UART_Transmit(&huart6, (uint8_t*)clearScreen, strlen(clearScreen), HAL_MAX_DELAY);
+      |                                                     ^~~~~~
+../Core/Src/main.c:407:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:437:3: warning: implicit declaration of function 'HAL_TIM_Base_Start_IT'; did you mean 'HAL_DMA_Start_IT'? [-Wimplicit-function-declaration]
+  437 |   HAL_TIM_Base_Start_IT(&htim4);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+      |   HAL_DMA_Start_IT
+../Core/Src/main.c:373:29: warning: unused variable 'timer_board_tens' [-Wunused-variable]
+  373 |   uint8_t timer_board_ones, timer_board_tens;
+      |                             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:373:11: warning: unused variable 'timer_board_ones' [-Wunused-variable]
+  373 |   uint8_t timer_board_ones, timer_board_tens;
+      |           ^~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_ADC1_Init':
+../Core/Src/main.c:508:3: error: unknown type name 'ADC_ChannelConfTypeDef'; did you mean 'ADC_Common_TypeDef'?
+  508 |   ADC_ChannelConfTypeDef sConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   ADC_Common_TypeDef
+../Core/Src/main.c:516:8: error: request for member 'Instance' in something not a structure or union
+  516 |   hadc1.Instance = ADC1;
+      |        ^
+../Core/Src/main.c:517:8: error: request for member 'Init' in something not a structure or union
+  517 |   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+      |        ^
+../Core/Src/main.c:517:31: error: 'ADC_CLOCK_SYNC_PCLK_DIV2' undeclared (first use in this function); did you mean 'ADC_CLOCKPRESCALER_PCLK_DIV2'?
+  517 |   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                               ADC_CLOCKPRESCALER_PCLK_DIV2
+../Core/Src/main.c:518:8: error: request for member 'Init' in something not a structure or union
+  518 |   hadc1.Init.Resolution = ADC_RESOLUTION_8B;
+      |        ^
+../Core/Src/main.c:518:27: error: 'ADC_RESOLUTION_8B' undeclared (first use in this function); did you mean 'ADC_RESOLUTION8b'?
+  518 |   hadc1.Init.Resolution = ADC_RESOLUTION_8B;
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           ADC_RESOLUTION8b
+../Core/Src/main.c:519:8: error: request for member 'Init' in something not a structure or union
+  519 |   hadc1.Init.ScanConvMode = ENABLE;
+      |        ^
+../Core/Src/main.c:520:8: error: request for member 'Init' in something not a structure or union
+  520 |   hadc1.Init.ContinuousConvMode = DISABLE;
+      |        ^
+../Core/Src/main.c:521:8: error: request for member 'Init' in something not a structure or union
+  521 |   hadc1.Init.DiscontinuousConvMode = DISABLE;
+      |        ^
+../Core/Src/main.c:522:8: error: request for member 'Init' in something not a structure or union
+  522 |   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+      |        ^
+../Core/Src/main.c:522:37: error: 'ADC_EXTERNALTRIGCONVEDGE_NONE' undeclared (first use in this function); did you mean 'ADC_EXTERNALTRIG_EDGE_NONE'?
+  522 |   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                     ADC_EXTERNALTRIG_EDGE_NONE
+../Core/Src/main.c:523:8: error: request for member 'Init' in something not a structure or union
+  523 |   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+      |        ^
+../Core/Src/main.c:523:33: error: 'ADC_SOFTWARE_START' undeclared (first use in this function)
+  523 |   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+      |                                 ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:524:8: error: request for member 'Init' in something not a structure or union
+  524 |   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+      |        ^
+../Core/Src/main.c:524:26: error: 'ADC_DATAALIGN_RIGHT' undeclared (first use in this function)
+  524 |   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+      |                          ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:525:8: error: request for member 'Init' in something not a structure or union
+  525 |   hadc1.Init.NbrOfConversion = 1;
+      |        ^
+../Core/Src/main.c:526:8: error: request for member 'Init' in something not a structure or union
+  526 |   hadc1.Init.DMAContinuousRequests = DISABLE;
+      |        ^
+../Core/Src/main.c:527:8: error: request for member 'Init' in something not a structure or union
+  527 |   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+      |        ^
+../Core/Src/main.c:527:29: error: 'ADC_EOC_SINGLE_CONV' undeclared (first use in this function); did you mean 'EOC_SINGLE_CONV'?
+  527 |   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+      |                             ^~~~~~~~~~~~~~~~~~~
+      |                             EOC_SINGLE_CONV
+../Core/Src/main.c:528:7: warning: implicit declaration of function 'HAL_ADC_Init'; did you mean 'HAL_DeInit'? [-Wimplicit-function-declaration]
+  528 |   if (HAL_ADC_Init(&hadc1) != HAL_OK)
+      |       ^~~~~~~~~~~~
+      |       HAL_DeInit
+../Core/Src/main.c:535:10: error: request for member 'Channel' in something not a structure or union
+  535 |   sConfig.Channel = ADC_CHANNEL_1;
+      |          ^
+../Core/Src/main.c:535:21: error: 'ADC_CHANNEL_1' undeclared (first use in this function); did you mean 'DAC2_CHANNEL_1'?
+  535 |   sConfig.Channel = ADC_CHANNEL_1;
+      |                     ^~~~~~~~~~~~~
+      |                     DAC2_CHANNEL_1
+../Core/Src/main.c:536:10: error: request for member 'Rank' in something not a structure or union
+  536 |   sConfig.Rank = 1;
+      |          ^
+../Core/Src/main.c:537:10: error: request for member 'SamplingTime' in something not a structure or union
+  537 |   sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
+      |          ^
+../Core/Src/main.c:537:26: error: 'ADC_SAMPLETIME_15CYCLES' undeclared (first use in this function); did you mean 'ADC_SAMPLETIME_2CYCLE_5'?
+  537 |   sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~
+      |                          ADC_SAMPLETIME_2CYCLE_5
+../Core/Src/main.c:538:7: warning: implicit declaration of function 'HAL_ADC_ConfigChannel' [-Wimplicit-function-declaration]
+  538 |   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_TIM1_Init':
+../Core/Src/main.c:560:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+  560 |   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   EXTI_ConfigTypeDef
+../Core/Src/main.c:561:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  561 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:566:8: error: request for member 'Instance' in something not a structure or union
+  566 |   htim1.Instance = TIM1;
+      |        ^
+../Core/Src/main.c:567:8: error: request for member 'Init' in something not a structure or union
+  567 |   htim1.Init.Prescaler = 16000-1;
+      |        ^
+../Core/Src/main.c:568:8: error: request for member 'Init' in something not a structure or union
+  568 |   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:568:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  568 |   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:569:8: error: request for member 'Init' in something not a structure or union
+  569 |   htim1.Init.Period = 500;
+      |        ^
+../Core/Src/main.c:570:8: error: request for member 'Init' in something not a structure or union
+  570 |   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:570:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  570 |   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:571:8: error: request for member 'Init' in something not a structure or union
+  571 |   htim1.Init.RepetitionCounter = 0;
+      |        ^
+../Core/Src/main.c:572:8: error: request for member 'Init' in something not a structure or union
+  572 |   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |        ^
+../Core/Src/main.c:572:34: error: 'TIM_AUTORELOAD_PRELOAD_ENABLE' undeclared (first use in this function)
+  572 |   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:573:7: warning: implicit declaration of function 'HAL_TIM_Base_Init' [-Wimplicit-function-declaration]
+  573 |   if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:577:21: error: request for member 'ClockSource' in something not a structure or union
+  577 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                     ^
+../Core/Src/main.c:577:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function)
+  577 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:578:7: warning: implicit declaration of function 'HAL_TIM_ConfigClockSource' [-Wimplicit-function-declaration]
+  578 |   if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:582:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  582 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:582:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  582 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:583:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  583 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:583:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  583 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:584:7: warning: implicit declaration of function 'HAL_TIMEx_MasterConfigSynchronization'; did you mean 'HAL_TIM_SlaveConfigSynchronization'? [-Wimplicit-function-declaration]
+  584 |   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       HAL_TIM_SlaveConfigSynchronization
+../Core/Src/main.c: In function 'MX_TIM2_Init':
+../Core/Src/main.c:606:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+  606 |   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   EXTI_ConfigTypeDef
+../Core/Src/main.c:607:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  607 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:608:3: error: unknown type name 'TIM_IC_InitTypeDef'; did you mean 'DMA_InitTypeDef'?
+  608 |   TIM_IC_InitTypeDef sConfigIC = {0};
+      |   ^~~~~~~~~~~~~~~~~~
+      |   DMA_InitTypeDef
+../Core/Src/main.c:613:8: error: request for member 'Instance' in something not a structure or union
+  613 |   htim2.Instance = TIM2;
+      |        ^
+../Core/Src/main.c:614:8: error: request for member 'Init' in something not a structure or union
+  614 |   htim2.Init.Prescaler = 16-1;
+      |        ^
+../Core/Src/main.c:615:8: error: request for member 'Init' in something not a structure or union
+  615 |   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:615:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  615 |   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:616:8: error: request for member 'Init' in something not a structure or union
+  616 |   htim2.Init.Period = 20000-1;
+      |        ^
+../Core/Src/main.c:617:8: error: request for member 'Init' in something not a structure or union
+  617 |   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:617:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  617 |   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:618:8: error: request for member 'Init' in something not a structure or union
+  618 |   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |        ^
+../Core/Src/main.c:618:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+  618 |   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:623:21: error: request for member 'ClockSource' in something not a structure or union
+  623 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                     ^
+../Core/Src/main.c:623:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function)
+  623 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:628:7: warning: implicit declaration of function 'HAL_TIM_IC_Init'; did you mean 'HAL_LIN_Init'? [-Wimplicit-function-declaration]
+  628 |   if (HAL_TIM_IC_Init(&htim2) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~
+      |       HAL_LIN_Init
+../Core/Src/main.c:632:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  632 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:632:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  632 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:633:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  633 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:633:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  633 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:638:12: error: request for member 'ICPolarity' in something not a structure or union
+  638 |   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_BOTHEDGE;
+      |            ^
+../Core/Src/main.c:638:26: error: 'TIM_INPUTCHANNELPOLARITY_BOTHEDGE' undeclared (first use in this function)
+  638 |   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_BOTHEDGE;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:639:12: error: request for member 'ICSelection' in something not a structure or union
+  639 |   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+      |            ^
+../Core/Src/main.c:639:27: error: 'TIM_ICSELECTION_DIRECTTI' undeclared (first use in this function)
+  639 |   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:640:12: error: request for member 'ICPrescaler' in something not a structure or union
+  640 |   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+      |            ^
+../Core/Src/main.c:640:27: error: 'TIM_ICPSC_DIV1' undeclared (first use in this function)
+  640 |   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+      |                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:641:12: error: request for member 'ICFilter' in something not a structure or union
+  641 |   sConfigIC.ICFilter = 0;
+      |            ^
+../Core/Src/main.c:642:7: warning: implicit declaration of function 'HAL_TIM_IC_ConfigChannel' [-Wimplicit-function-declaration]
+  642 |   if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:642:52: error: 'TIM_CHANNEL_4' undeclared (first use in this function); did you mean 'DMA_CHANNEL_4'?
+  642 |   if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
+      |                                                    ^~~~~~~~~~~~~
+      |                                                    DMA_CHANNEL_4
+../Core/Src/main.c: In function 'MX_TIM3_Init':
+../Core/Src/main.c:664:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  664 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:665:3: error: unknown type name 'TIM_OC_InitTypeDef'; did you mean 'DMA_InitTypeDef'?
+  665 |   TIM_OC_InitTypeDef sConfigOC = {0};
+      |   ^~~~~~~~~~~~~~~~~~
+      |   DMA_InitTypeDef
+../Core/Src/main.c:670:8: error: request for member 'Instance' in something not a structure or union
+  670 |   htim3.Instance = TIM3;
+      |        ^
+../Core/Src/main.c:671:8: error: request for member 'Init' in something not a structure or union
+  671 |   htim3.Init.Prescaler = 16-1;
+      |        ^
+../Core/Src/main.c:672:8: error: request for member 'Init' in something not a structure or union
+  672 |   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:672:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  672 |   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:673:8: error: request for member 'Init' in something not a structure or union
+  673 |   htim3.Init.Period = 2000-1;
+      |        ^
+../Core/Src/main.c:674:8: error: request for member 'Init' in something not a structure or union
+  674 |   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:674:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  674 |   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:675:8: error: request for member 'Init' in something not a structure or union
+  675 |   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |        ^
+../Core/Src/main.c:675:34: error: 'TIM_AUTORELOAD_PRELOAD_ENABLE' undeclared (first use in this function)
+  675 |   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:676:7: warning: implicit declaration of function 'HAL_TIM_PWM_Init'; did you mean 'HAL_LIN_Init'? [-Wimplicit-function-declaration]
+  676 |   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~
+      |       HAL_LIN_Init
+../Core/Src/main.c:680:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  680 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:680:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  680 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:681:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  681 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:681:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  681 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:686:12: error: request for member 'OCMode' in something not a structure or union
+  686 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |            ^
+../Core/Src/main.c:686:22: error: 'TIM_OCMODE_PWM1' undeclared (first use in this function)
+  686 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:687:12: error: request for member 'Pulse' in something not a structure or union
+  687 |   sConfigOC.Pulse = 0;
+      |            ^
+../Core/Src/main.c:688:12: error: request for member 'OCPolarity' in something not a structure or union
+  688 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |            ^
+../Core/Src/main.c:688:26: error: 'TIM_OCPOLARITY_HIGH' undeclared (first use in this function)
+  688 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |                          ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:689:12: error: request for member 'OCFastMode' in something not a structure or union
+  689 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |            ^
+../Core/Src/main.c:689:26: error: 'TIM_OCFAST_DISABLE' undeclared (first use in this function)
+  689 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |                          ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:690:7: warning: implicit declaration of function 'HAL_TIM_PWM_ConfigChannel' [-Wimplicit-function-declaration]
+  690 |   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:690:53: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'DMA_CHANNEL_1'?
+  690 |   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+      |                                                     ^~~~~~~~~~~~~
+      |                                                     DMA_CHANNEL_1
+../Core/Src/main.c:694:53: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'DMA_CHANNEL_2'?
+  694 |   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+      |                                                     ^~~~~~~~~~~~~
+      |                                                     DMA_CHANNEL_2
+../Core/Src/main.c:701:3: warning: implicit declaration of function 'HAL_TIM_MspPostInit' [-Wimplicit-function-declaration]
+  701 |   HAL_TIM_MspPostInit(&htim3);
+      |   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_TIM4_Init':
+../Core/Src/main.c:717:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+  717 |   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   EXTI_ConfigTypeDef
+../Core/Src/main.c:718:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  718 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:723:8: error: request for member 'Instance' in something not a structure or union
+  723 |   htim4.Instance = TIM4;
+      |        ^
+../Core/Src/main.c:724:8: error: request for member 'Init' in something not a structure or union
+  724 |   htim4.Init.Prescaler = 16000-1;
+      |        ^
+../Core/Src/main.c:725:8: error: request for member 'Init' in something not a structure or union
+  725 |   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:725:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  725 |   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:726:8: error: request for member 'Init' in something not a structure or union
+  726 |   htim4.Init.Period = 1000-1;
+      |        ^
+../Core/Src/main.c:727:8: error: request for member 'Init' in something not a structure or union
+  727 |   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:727:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  727 |   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:728:8: error: request for member 'Init' in something not a structure or union
+  728 |   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |        ^
+../Core/Src/main.c:728:34: error: 'TIM_AUTORELOAD_PRELOAD_ENABLE' undeclared (first use in this function)
+  728 |   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:733:21: error: request for member 'ClockSource' in something not a structure or union
+  733 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                     ^
+../Core/Src/main.c:733:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function)
+  733 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:738:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  738 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:738:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  738 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:739:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  739 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:739:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  739 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_TIM5_Init':
+../Core/Src/main.c:762:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+  762 |   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   EXTI_ConfigTypeDef
+../Core/Src/main.c:763:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  763 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:764:3: error: unknown type name 'TIM_OC_InitTypeDef'; did you mean 'DMA_InitTypeDef'?
+  764 |   TIM_OC_InitTypeDef sConfigOC = {0};
+      |   ^~~~~~~~~~~~~~~~~~
+      |   DMA_InitTypeDef
+../Core/Src/main.c:769:8: error: request for member 'Instance' in something not a structure or union
+  769 |   htim5.Instance = TIM5;
+      |        ^
+../Core/Src/main.c:770:8: error: request for member 'Init' in something not a structure or union
+  770 |   htim5.Init.Prescaler = 16-1;
+      |        ^
+../Core/Src/main.c:771:8: error: request for member 'Init' in something not a structure or union
+  771 |   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:771:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  771 |   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:772:8: error: request for member 'Init' in something not a structure or union
+  772 |   htim5.Init.Period = 20000-1;
+      |        ^
+../Core/Src/main.c:773:8: error: request for member 'Init' in something not a structure or union
+  773 |   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:773:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  773 |   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:774:8: error: request for member 'Init' in something not a structure or union
+  774 |   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |        ^
+../Core/Src/main.c:774:34: error: 'TIM_AUTORELOAD_PRELOAD_ENABLE' undeclared (first use in this function)
+  774 |   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:779:21: error: request for member 'ClockSource' in something not a structure or union
+  779 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                     ^
+../Core/Src/main.c:779:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function)
+  779 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:788:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  788 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:788:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  788 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:789:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  789 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:789:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  789 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:794:12: error: request for member 'OCMode' in something not a structure or union
+  794 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |            ^
+../Core/Src/main.c:794:22: error: 'TIM_OCMODE_PWM1' undeclared (first use in this function)
+  794 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:795:12: error: request for member 'Pulse' in something not a structure or union
+  795 |   sConfigOC.Pulse = 500-1;
+      |            ^
+../Core/Src/main.c:796:12: error: request for member 'OCPolarity' in something not a structure or union
+  796 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |            ^
+../Core/Src/main.c:796:26: error: 'TIM_OCPOLARITY_HIGH' undeclared (first use in this function)
+  796 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |                          ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:797:12: error: request for member 'OCFastMode' in something not a structure or union
+  797 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |            ^
+../Core/Src/main.c:797:26: error: 'TIM_OCFAST_DISABLE' undeclared (first use in this function)
+  797 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |                          ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:798:53: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'DMA_CHANNEL_1'?
+  798 |   if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+      |                                                     ^~~~~~~~~~~~~
+      |                                                     DMA_CHANNEL_1
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:860:28: error: 'HCSR04_TRIG_Pin' undeclared (first use in this function)
+  860 |   HAL_GPIO_WritePin(GPIOA, HCSR04_TRIG_Pin|LED_BUILTIN_Pin|RED_Pin|GRN_Pin
+      |                            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:860:44: error: 'LED_BUILTIN_Pin' undeclared (first use in this function)
+  860 |   HAL_GPIO_WritePin(GPIOA, HCSR04_TRIG_Pin|LED_BUILTIN_Pin|RED_Pin|GRN_Pin
+      |                                            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:860:60: error: 'RED_Pin' undeclared (first use in this function)
+  860 |   HAL_GPIO_WritePin(GPIOA, HCSR04_TRIG_Pin|LED_BUILTIN_Pin|RED_Pin|GRN_Pin
+      |                                                            ^~~~~~~
+../Core/Src/main.c:860:68: error: 'GRN_Pin' undeclared (first use in this function)
+  860 |   HAL_GPIO_WritePin(GPIOA, HCSR04_TRIG_Pin|LED_BUILTIN_Pin|RED_Pin|GRN_Pin
+      |                                                                    ^~~~~~~
+../Core/Src/main.c:861:28: error: 'BLU_Pin' undeclared (first use in this function); did you mean 'B1_Pin'?
+  861 |                           |BLU_Pin, GPIO_PIN_RESET);
+      |                            ^~~~~~~
+      |                            B1_Pin
+../Core/Src/main.c:864:28: error: 'DIGIT_B3_Pin' undeclared (first use in this function)
+  864 |   HAL_GPIO_WritePin(GPIOB, DIGIT_B3_Pin|DIGIT_A0_Pin|DIGIT_A1_Pin|DIGIT_A2_Pin
+      |                            ^~~~~~~~~~~~
+../Core/Src/main.c:864:41: error: 'DIGIT_A0_Pin' undeclared (first use in this function)
+  864 |   HAL_GPIO_WritePin(GPIOB, DIGIT_B3_Pin|DIGIT_A0_Pin|DIGIT_A1_Pin|DIGIT_A2_Pin
+      |                                         ^~~~~~~~~~~~
+../Core/Src/main.c:864:54: error: 'DIGIT_A1_Pin' undeclared (first use in this function)
+  864 |   HAL_GPIO_WritePin(GPIOB, DIGIT_B3_Pin|DIGIT_A0_Pin|DIGIT_A1_Pin|DIGIT_A2_Pin
+      |                                                      ^~~~~~~~~~~~
+../Core/Src/main.c:864:67: error: 'DIGIT_A2_Pin' undeclared (first use in this function)
+  864 |   HAL_GPIO_WritePin(GPIOB, DIGIT_B3_Pin|DIGIT_A0_Pin|DIGIT_A1_Pin|DIGIT_A2_Pin
+      |                                                                   ^~~~~~~~~~~~
+../Core/Src/main.c:865:28: error: 'DIGIT_A3_Pin' undeclared (first use in this function)
+  865 |                           |DIGIT_A3_Pin|DIGIT_B0_Pin|DIGIT_B1_Pin|DIGIT_B2_Pin, GPIO_PIN_RESET);
+      |                            ^~~~~~~~~~~~
+../Core/Src/main.c:865:41: error: 'DIGIT_B0_Pin' undeclared (first use in this function)
+  865 |                           |DIGIT_A3_Pin|DIGIT_B0_Pin|DIGIT_B1_Pin|DIGIT_B2_Pin, GPIO_PIN_RESET);
+      |                                         ^~~~~~~~~~~~
+../Core/Src/main.c:865:54: error: 'DIGIT_B1_Pin' undeclared (first use in this function)
+  865 |                           |DIGIT_A3_Pin|DIGIT_B0_Pin|DIGIT_B1_Pin|DIGIT_B2_Pin, GPIO_PIN_RESET);
+      |                                                      ^~~~~~~~~~~~
+../Core/Src/main.c:865:67: error: 'DIGIT_B2_Pin' undeclared (first use in this function)
+  865 |                           |DIGIT_A3_Pin|DIGIT_B0_Pin|DIGIT_B1_Pin|DIGIT_B2_Pin, GPIO_PIN_RESET);
+      |                                                                   ^~~~~~~~~~~~
+../Core/Src/main.c:883:25: error: 'RPM_TICK_Pin' undeclared (first use in this function)
+  883 |   GPIO_InitStruct.Pin = RPM_TICK_Pin;
+      |                         ^~~~~~~~~~~~
+../Core/Src/main.c:886:17: error: 'RPM_TICK_GPIO_Port' undeclared (first use in this function); did you mean 'TCK_GPIO_Port'?
+  886 |   HAL_GPIO_Init(RPM_TICK_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~
+      |                 TCK_GPIO_Port
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+19:16:32 Build Failed. 162 errors, 57 warnings. (took 3s.912ms)
+
