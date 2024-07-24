@@ -1,118 +1,118 @@
-20:00:37 **** Incremental Build of configuration Debug for project Final_Demo ****
+03:15:35 **** Incremental Build of configuration Debug for project Final_Demo ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'handle_setup_mode':
-../Core/Src/main.c:141:3: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
-  141 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
+../Core/Src/main.c:261:3: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+  261 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
       |   ^~~~~~~~
 ../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
    20 | #include "main.h"
   +++ |+#include <stdio.h>
-   21 | #include "stm32f4xx.h"
-../Core/Src/main.c:141:3: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
-  141 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
+   21 | 
+../Core/Src/main.c:261:3: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+  261 |   snprintf(response, BUFFER_SIZE, "SETUP MODE\r\n");
       |   ^~~~~~~~
-../Core/Src/main.c:141:3: note: include '<stdio.h>' or provide a declaration of 'snprintf'
-../Core/Src/main.c:142:51: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
-  142 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+../Core/Src/main.c:261:3: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/main.c:262:51: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  262 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
       |                                                   ^~~~~~
 ../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
    20 | #include "main.h"
   +++ |+#include <string.h>
-   21 | #include "stm32f4xx.h"
-../Core/Src/main.c:142:51: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
-  142 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
+   21 | 
+../Core/Src/main.c:262:51: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  262 |   HAL_UART_Transmit(&huart6, (uint8_t *)response, strlen(response), HAL_MAX_DELAY);
       |                                                   ^~~~~~
-../Core/Src/main.c:142:51: note: include '<string.h>' or provide a declaration of 'strlen'
-../Core/Src/main.c:143:56: warning: unknown conversion type character 'P' in format [-Wformat=]
-  143 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+../Core/Src/main.c:262:51: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:263:56: warning: unknown conversion type character 'P' in format [-Wformat=]
+  263 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
       |                                                        ^
-../Core/Src/main.c:143:69: warning: unknown conversion type character 'P' in format [-Wformat=]
-  143 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+../Core/Src/main.c:263:69: warning: unknown conversion type character 'P' in format [-Wformat=]
+  263 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
       |                                                                     ^
-../Core/Src/main.c:143:82: warning: unknown conversion type character 'P' in format [-Wformat=]
-  143 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
+../Core/Src/main.c:263:82: warning: unknown conversion type character 'P' in format [-Wformat=]
+  263 |   snprintf(response, BUFFER_SIZE, "0 - MANUAL, 1 - 60% PWM, 2 - 80% PWM, 3 - 99% PWM\r\n");
       |                                                                                  ^
-../Core/Src/main.c:147:61: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  147 |   prompt_and_receive("Enter Inlet Motor Speed PWM (0-3): ", &inlet_pwm);
+../Core/Src/main.c:267:61: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  267 |   prompt_and_receive("Enter Inlet Motor Speed PWM (0-3): ", &inlet_pwm);
       |                                                             ^~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:148:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  148 |   prompt_and_receive("Enter Zone 1 Motor Speed PWM (0-3): ", &zone1_pwm);
+../Core/Src/main.c:268:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  268 |   prompt_and_receive("Enter Zone 1 Motor Speed PWM (0-3): ", &zone1_pwm);
       |                                                              ^~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:149:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  149 |   prompt_and_receive("Enter Zone 2 Motor Speed PWM (0-3): ", &zone2_pwm);
+../Core/Src/main.c:269:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  269 |   prompt_and_receive("Enter Zone 2 Motor Speed PWM (0-3): ", &zone2_pwm);
       |                                                              ^~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:150:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  150 |   prompt_and_receive("Enter Zone 3 Motor Speed PWM (0-3): ", &zone3_pwm);
+../Core/Src/main.c:270:62: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  270 |   prompt_and_receive("Enter Zone 3 Motor Speed PWM (0-3): ", &zone3_pwm);
       |                                                              ^~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:154:65: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  154 |   prompt_and_receive("Enter Current Wall Clock Time (00-23): ", &hours);
+../Core/Src/main.c:274:65: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  274 |   prompt_and_receive("Enter Current Wall Clock Time (00-23): ", &hours);
       |                                                                 ^~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:155:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  155 |   prompt_and_receive("Enter Inlet Wall Clock Start Time (00-23): ", &inlet_start);
+../Core/Src/main.c:275:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  275 |   prompt_and_receive("Enter Inlet Wall Clock Start Time (00-23): ", &inlet_start);
       |                                                                     ^~~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:156:68: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  156 |   prompt_and_receive("Enter Inlet Wall Clock Stop Time (00-23): ", &inlet_stop);
+../Core/Src/main.c:276:68: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  276 |   prompt_and_receive("Enter Inlet Wall Clock Stop Time (00-23): ", &inlet_stop);
       |                                                                    ^~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:157:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  157 |   prompt_and_receive("Enter Zone 1 Wall Clock Start Time (00-23): ", &zone1_start);
+../Core/Src/main.c:277:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  277 |   prompt_and_receive("Enter Zone 1 Wall Clock Start Time (00-23): ", &zone1_start);
       |                                                                      ^~~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:158:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  158 |   prompt_and_receive("Enter Zone 1 Wall Clock Stop Time (00-23): ", &zone1_stop);
+../Core/Src/main.c:278:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  278 |   prompt_and_receive("Enter Zone 1 Wall Clock Stop Time (00-23): ", &zone1_stop);
       |                                                                     ^~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:159:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  159 |   prompt_and_receive("Enter Zone 2 Wall Clock Start Time (00-23): ", &zone2_start);
+../Core/Src/main.c:279:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  279 |   prompt_and_receive("Enter Zone 2 Wall Clock Start Time (00-23): ", &zone2_start);
       |                                                                      ^~~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:160:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  160 |   prompt_and_receive("Enter Zone 2 Wall Clock Stop Time (00-23): ", &zone2_stop);
+../Core/Src/main.c:280:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  280 |   prompt_and_receive("Enter Zone 2 Wall Clock Stop Time (00-23): ", &zone2_stop);
       |                                                                     ^~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:161:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  161 |   prompt_and_receive("Enter Zone 3 Wall Clock Start Time (00-23): ", &zone3_start);
+../Core/Src/main.c:281:70: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  281 |   prompt_and_receive("Enter Zone 3 Wall Clock Start Time (00-23): ", &zone3_start);
       |                                                                      ^~~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:162:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  162 |   prompt_and_receive("Enter Zone 3 Wall Clock Stop Time (00-23): ", &zone3_stop);
+../Core/Src/main.c:282:69: warning: passing argument 2 of 'prompt_and_receive' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  282 |   prompt_and_receive("Enter Zone 3 Wall Clock Stop Time (00-23): ", &zone3_stop);
       |                                                                     ^~~~~~~~~~~
-../Core/Src/main.c:90:50: note: expected 'int *' but argument is of type 'volatile int *'
-   90 | void prompt_and_receive(const char *prompt, int *value);
+../Core/Src/main.c:113:50: note: expected 'int *' but argument is of type 'volatile int *'
+  113 | void prompt_and_receive(const char *prompt, int *value);
       |                                             ~~~~~^~~~~
-../Core/Src/main.c:166:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  166 |   HAL_UART_Transmit(&huart6, "\r\n", 2, HAL_MAX_DELAY);
+../Core/Src/main.c:286:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  286 |   HAL_UART_Transmit(&huart6, "\r\n", 2, HAL_MAX_DELAY);
       |                              ^~~~~~
       |                              |
       |                              char *
@@ -124,104 +124,83 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
   722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
       |                                                                ~~~~~~~~~~~~~~~^~~~~
 ../Core/Src/main.c: In function 'prompt_and_receive':
-../Core/Src/main.c:173:49: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
-  173 |   HAL_UART_Transmit(&huart6, (uint8_t *)prompt, strlen(prompt), HAL_MAX_DELAY);
+../Core/Src/main.c:293:49: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  293 |   HAL_UART_Transmit(&huart6, (uint8_t *)prompt, strlen(prompt), HAL_MAX_DELAY);
       |                                                 ^~~~~~
-../Core/Src/main.c:173:49: note: include '<string.h>' or provide a declaration of 'strlen'
-../Core/Src/main.c:176:3: warning: implicit declaration of function 'sscanf' [-Wimplicit-function-declaration]
-  176 |   sscanf(buffer, "%d", value); // load value with the inputted characters
+../Core/Src/main.c:293:49: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:296:3: warning: implicit declaration of function 'sscanf' [-Wimplicit-function-declaration]
+  296 |   sscanf(buffer, "%d", value); // load value with the inputted characters
       |   ^~~~~~
-../Core/Src/main.c:176:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
-../Core/Src/main.c:176:3: warning: incompatible implicit declaration of built-in function 'sscanf' [-Wbuiltin-declaration-mismatch]
-../Core/Src/main.c:176:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
-../Core/Src/main.c:171:8: warning: unused variable 'response' [-Wunused-variable]
-  171 |   char response[BUFFER_SIZE];
+../Core/Src/main.c:296:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+../Core/Src/main.c:296:3: warning: incompatible implicit declaration of built-in function 'sscanf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:296:3: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+../Core/Src/main.c:291:8: warning: unused variable 'response' [-Wunused-variable]
+  291 |   char response[BUFFER_SIZE];
       |        ^~~~~~~~
 ../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
-../Core/Src/main.c:207:9: warning: implicit declaration of function 'update_display' [-Wimplicit-function-declaration]
-  207 |         update_display();
+../Core/Src/main.c:317:9: warning: implicit declaration of function 'update_display' [-Wimplicit-function-declaration]
+  317 |         update_display();
       |         ^~~~~~~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:251:6: warning: conflicting types for 'update_display'; have 'void(void)'
-  251 | void update_display(void)
+../Core/Src/main.c:427:6: warning: conflicting types for 'update_display'; have 'void(void)'
+  427 | void update_display(void)
       |      ^~~~~~~~~~~~~~
-../Core/Src/main.c:207:9: note: previous implicit declaration of 'update_display' with type 'void(void)'
-  207 |         update_display();
+../Core/Src/main.c:317:9: note: previous implicit declaration of 'update_display' with type 'void(void)'
+  317 |         update_display();
       |         ^~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'update_display':
-../Core/Src/main.c:259:5: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
-  259 |     strcpy(active_zone, "Inlet");
-      |     ^~~~~~
-../Core/Src/main.c:259:5: note: include '<string.h>' or provide a declaration of 'strcpy'
-../Core/Src/main.c:259:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
-../Core/Src/main.c:259:5: note: include '<string.h>' or provide a declaration of 'strcpy'
-../Core/Src/main.c:262:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
-  262 |     strcpy(active_zone, "Zone 1");
-      |     ^~~~~~
-../Core/Src/main.c:262:5: note: include '<string.h>' or provide a declaration of 'strcpy'
-../Core/Src/main.c:265:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
-  265 |     strcpy(active_zone, "Zone 2");
-      |     ^~~~~~
-../Core/Src/main.c:265:5: note: include '<string.h>' or provide a declaration of 'strcpy'
-../Core/Src/main.c:268:5: warning: incompatible implicit declaration of built-in function 'strcpy' [-Wbuiltin-declaration-mismatch]
-  268 |     strcpy(active_zone, "Zone 3");
-      |     ^~~~~~
-../Core/Src/main.c:268:5: note: include '<string.h>' or provide a declaration of 'strcpy'
-../Core/Src/main.c:291:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  291 |   sprintf(txd_msg_buffer, "Time: %d:00 | Zone: %s | Motor Speed: %d%% | Motor RPM: %d | Reservoir: %d%%\r\n",
+../Core/Src/main.c:464:18: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  464 |     case INLET:  sprintf(string_zone, "INLET"); break;
+      |                  ^~~~~~~
+../Core/Src/main.c:464:18: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:464:18: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:464:18: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:478:3: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  478 |   sprintf(txd_msg_buffer, "WALL CLOCK: %d:00 | ZONE/INLET: %s | MOTOR %%PWM: %d | MOTOR RPM: %d | WATER DEPTH(%%): %d\r\n",
       |   ^~~~~~~
-../Core/Src/main.c:291:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c:291:3: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-../Core/Src/main.c:291:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c:291:85: warning: format '%d' expects argument of type 'int', but argument 6 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  291 |   sprintf(txd_msg_buffer, "Time: %d:00 | Zone: %s | Motor Speed: %d%% | Motor RPM: %d | Reservoir: %d%%\r\n",
-      |                                                                                    ~^
-      |                                                                                     |
-      |                                                                                     int
-      |                                                                                    %ld
-  292 |           hours, active_zone, pwm_percent, g_current_rpm, g_water_depth_final);
-      |                                            ~~~~~~~~~~~~~                             
-      |                                            |
-      |                                            uint32_t {aka long unsigned int}
-../Core/Src/main.c:294:56: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
-  294 |   HAL_UART_Transmit(&huart6, (uint8_t*)txd_msg_buffer, strlen(txd_msg_buffer), 1000);
+../Core/Src/main.c:478:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:478:95: warning: format '%d' expects argument of type 'int', but argument 6 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  478 |   sprintf(txd_msg_buffer, "WALL CLOCK: %d:00 | ZONE/INLET: %s | MOTOR %%PWM: %d | MOTOR RPM: %d | WATER DEPTH(%%): %d\r\n",
+      |                                                                                              ~^
+      |                                                                                               |
+      |                                                                                               int
+      |                                                                                              %ld
+  479 |           hours, string_zone, get_zone_pwm(active_zone), g_current_rpm, g_water_depth_final);
+      |                                                          ~~~~~~~~~~~~~                         
+      |                                                          |
+      |                                                          uint32_t {aka long unsigned int}
+../Core/Src/main.c:481:56: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  481 |   HAL_UART_Transmit(&huart6, (uint8_t*)txd_msg_buffer, strlen(txd_msg_buffer), 1000);
       |                                                        ^~~~~~
-../Core/Src/main.c:294:56: note: include '<string.h>' or provide a declaration of 'strlen'
-../Core/Src/main.c:255:7: warning: unused variable 'motor_rpm' [-Wunused-variable]
-  255 |   int motor_rpm = 0;
-      |       ^~~~~~~~~
-../Core/Src/main.c: In function 'update_current_water_reservoir_depth':
-../Core/Src/main.c:314:12: warning: unused variable 'distance' [-Wunused-variable]
-  314 |   uint32_t distance = 0;
-      |            ^~~~~~~~
-../Core/Src/main.c:313:12: warning: unused variable 'sensor_time' [-Wunused-variable]
-  313 |   uint32_t sensor_time = 0;
-      |            ^~~~~~~~~~~
-../Core/Src/main.c:312:12: warning: unused variable 'local_time' [-Wunused-variable]
-  312 |   uint32_t local_time = 0;
-      |            ^~~~~~~~~~
+../Core/Src/main.c:481:56: note: include '<string.h>' or provide a declaration of 'strlen'
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:414:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
-  414 |   HAL_UART_Transmit(&huart6, (uint8_t*)clearScreen, strlen(clearScreen), HAL_MAX_DELAY);
+../Core/Src/main.c:625:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  625 |   HAL_UART_Transmit(&huart6, (uint8_t*)clearScreen, strlen(clearScreen), HAL_MAX_DELAY);
       |                                                     ^~~~~~
-../Core/Src/main.c:414:53: note: include '<string.h>' or provide a declaration of 'strlen'
-../Core/Src/main.c:381:29: warning: unused variable 'timer_board_tens' [-Wunused-variable]
-  381 |   uint8_t timer_board_ones, timer_board_tens;
-      |                             ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:381:11: warning: unused variable 'timer_board_ones' [-Wunused-variable]
-  381 |   uint8_t timer_board_ones, timer_board_tens;
-      |           ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:625:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:759:54: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  759 |                           HAL_UART_Transmit(&huart6, "\r\nRESERVOIR IS EMPTY\r\n", 22, 1000);
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                      |
+      |                                                      char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
 arm-none-eabi-gcc -o "Final_Demo.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kago\Desktop\ECE298\stm32_ide_workspace\Final_Demo\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Final_Demo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Final_Demo.elf
  
 arm-none-eabi-size   Final_Demo.elf 
 arm-none-eabi-objdump -h -S  Final_Demo.elf  > "Final_Demo.list"
    text	   data	    bss	    dec	    hex	filename
-  31472	    100	   3224	  34796	   87ec	Final_Demo.elf
+  33948	    112	   3296	  37356	   91ec	Final_Demo.elf
 Finished building: default.size.stdout
  
 Finished building: Final_Demo.list
  
 
-20:00:38 Build Finished. 0 errors, 43 warnings. (took 1s.370ms)
+03:15:36 Build Finished. 0 errors, 34 warnings. (took 1s.136ms)
 

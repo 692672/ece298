@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32f4xx.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -34,7 +33,6 @@
 /* USER CODE BEGIN PD */
 #define BUFFER_SIZE 512
 #define SLOTS_PER_REVOLUTION 20  // Adjust this to match your slotted wheel
-#define SAMPLE_PERIOD_MS 1000    // Sample over 1 second
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,6 +47,7 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim5;
+TIM_HandleTypeDef htim9;
 
 UART_HandleTypeDef huart6;
 
@@ -63,9 +62,10 @@ volatile int inlet_pwm, zone1_pwm, zone2_pwm, zone3_pwm;
 volatile int inlet_start, inlet_stop, zone1_start, zone1_stop, zone2_start, zone2_stop, zone3_start, zone3_stop;
 volatile uint32_t g_rpm_tick_count = 0;
 volatile double g_water_depth = 0;
-volatile int g_water_depth_final = 0;
+volatile int g_water_depth_final = 1;
+volatile int res_empty = 0;
 volatile int g_adc_value = 0;
-volatile uint32_t g_last_rpm_calc_time = 0;
+volatile int g_pwm_percent = 0;
 volatile uint32_t g_current_rpm = 0;
 
 // Clock variables
@@ -74,6 +74,28 @@ volatile int minutes = 0;
 volatile int seconds = 0;
 volatile int real_seconds = 0;
 char txd_msg_buffer[256];
+
+// rgb led vars
+typedef enum {
+    LED_OFF,
+    LED_RED,
+    LED_GREEN,
+    LED_BLUE,
+    LED_PURPLE
+} LED_State;
+
+// pwm motor vars
+typedef enum {
+	INLET,
+	OUTLET1,
+	OUTLET2,
+	OUTLET3,
+	IN,
+	OUT
+} PIPE;
+
+volatile int active_zone = INLET;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -85,13 +107,18 @@ static void MX_TIM3_Init(void);
 static void MX_TIM5_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM4_Init(void);
+static void MX_TIM9_Init(void);
 /* USER CODE BEGIN PFP */
 void handle_setup_mode(void);
 void prompt_and_receive(const char *prompt, int *value);
 void display_value_on_timer_board(int value);
 uint8_t get_adc_value(void);
 int update_current_water_reservoir_depth(void);
-
+void setLEDState(LED_State state);
+void set_dc_motor(PIPE p, double pwm);
+void set_pwm_motor(PIPE p);
+int get_zone_pwm(PIPE p);
+int within_time_interval(int current_time, int time_start, int time_stop);
 
 /* USER CODE END PFP */
 
@@ -101,16 +128,11 @@ int update_current_water_reservoir_depth(void);
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
   if (GPIO_Pin == B1_Pin) {
-    exit_while_loop = 1;
+    exit_while_loop++;
   }
   else if (GPIO_Pin == RPM_TICK_Pin) {
     // increment the rpm value
     g_rpm_tick_count++;
-
-    // if real_seconds is 1 second, calculate the rpm
-    if (g_rpm_tick_count == UINT32_MAX) {
-      g_rpm_tick_count = 0;
-    }
   }
 }
 
@@ -132,6 +154,104 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     }
     HAL_UART_Receive_IT(&huart6, &rx_data, 1);
   }
+}
+
+void set_pwm_motor(PIPE p) {
+	switch (p) {
+	        case INLET:
+	        	// -90, 1ms pulse
+	            __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 650);
+	            setLEDState(LED_PURPLE);
+	            break;
+	        case OUTLET1:
+	        	// -30, 1.33ms pulse
+	            __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 500+800);
+	            setLEDState(LED_RED);
+	            break;
+	        case OUTLET2:
+	        	// 30, 1.66ms pulse
+				__HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 2500-567);
+				setLEDState(LED_GREEN);
+				break;
+	        case OUTLET3:
+	        	// 90, 2ms pulse
+				__HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 2500);
+				setLEDState(LED_BLUE);
+				break;
+	        default:
+	            // Invalid direction, stop the motor
+	            break;
+	    }
+}
+
+void set_dc_motor(PIPE p, double pwm) {
+    // Ensure the PWM value is within the valid range (0-100)
+    if (pwm < 0) pwm = 0;
+    if (pwm > 100) pwm = 100;
+
+    // Calculate the pulse width based on the percentage
+    uint32_t pulse = (htim3.Init.Period + 1) * pwm / 100;
+
+    // jumpstart motor to achieve desired pwm if in critical pwm zone and motor off
+//    if (pwm < 30 && pwm > 10 && g_current_rpm==0) {
+//    	if (p==IN) {
+//    		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, ((htim3.Init.Period + 1) * 50 / 100));
+//    	} else if (p==OUT) {
+//    		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, ((htim3.Init.Period + 1) * 50 / 100));
+//    	}
+//    	HAL_Delay(10);
+//    }
+
+
+
+    // Set the direction and apply the calculated pulse width
+    // stop motor in other direction
+    switch (p) {
+        case IN:
+        	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
+            __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, pulse);
+            break;
+        case OUT:
+            __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
+            __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, pulse);
+            break;
+        default:
+            // Invalid direction, stop the motor
+            __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
+            __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
+            break;
+    }
+}
+
+
+void setLEDState(LED_State state) {
+    // Turn off all LEDs first
+    HAL_GPIO_WritePin(GPIOA, RED_Pin, GPIO_PIN_RESET);  // RED
+    HAL_GPIO_WritePin(GPIOA, GRN_Pin, GPIO_PIN_RESET);  // GRN
+    HAL_GPIO_WritePin(GPIOA, BLU_Pin, GPIO_PIN_RESET);  // BLU
+
+    // Set the desired state
+    switch (state) {
+        case LED_OFF:
+            // All LEDs are already off
+            break;
+        case LED_RED:
+            HAL_GPIO_WritePin(GPIOA, RED_Pin, GPIO_PIN_SET);  // RED on
+            break;
+        case LED_GREEN:
+            HAL_GPIO_WritePin(GPIOA, GRN_Pin, GPIO_PIN_SET);  // GREEN on
+            break;
+        case LED_BLUE:
+            HAL_GPIO_WritePin(GPIOA, BLU_Pin, GPIO_PIN_SET);  // BLUE on
+            break;
+        case LED_PURPLE:
+            HAL_GPIO_WritePin(GPIOA, RED_Pin, GPIO_PIN_SET);  // RED on
+            HAL_GPIO_WritePin(GPIOA, BLU_Pin, GPIO_PIN_SET);  // BLUE on
+            break;
+        default:
+            // Invalid state
+            break;
+    }
 }
 
 void handle_setup_mode(void)
@@ -176,21 +296,11 @@ void prompt_and_receive(const char *prompt, int *value)
   sscanf(buffer, "%d", value); // load value with the inputted characters
 }
 
+volatile uint32_t g_last_rpm_calc_time = 0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (htim->Instance == TIM4) {
     real_seconds++;
-
-    //global update vars adc, rpm
-    g_adc_value = get_adc_value();
-    uint32_t current_time = HAL_GetTick();
-    if (current_time - g_last_rpm_calc_time >= SAMPLE_PERIOD_MS)
-    {
-        // Calculate RPM
-        g_current_rpm = (g_rpm_tick_count * 60 * 1000) / (SLOTS_PER_REVOLUTION * SAMPLE_PERIOD_MS);
-        g_rpm_tick_count = 0;  // Reset the count for the next sample period
-        g_last_rpm_calc_time = current_time;
-    }
 
 
     seconds += 600;
@@ -208,6 +318,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       }
     }
     //display_value_on_timer_board(g_water_depth);
+  }
+  else if (htim->Instance == TIM9) {
+//	  HAL_UART_Transmit(&huart6, "TIM9", 2, HAL_MAX_DELAY);
+	  //global update rpm (this is always over 100ms time interval since timer has period of 100ms)
+	  // apply correction factor after
+	  uint32_t temp_tick = g_rpm_tick_count;
+	  	g_current_rpm = (((temp_tick/3.0) * 60.0) / (SLOTS_PER_REVOLUTION))*0.69;
+	  	g_rpm_tick_count = 0;  // Reset the count for the next sample period
+
   }
 }
 
@@ -247,50 +366,118 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
     }
 }
 
+int get_zone_pwm(PIPE p) {
+    switch (p) {
+        case INLET:
+            if (!inlet_pwm) {
+                return (g_adc_value / 256.0) * 100;
+            } else if (inlet_pwm == 1) {
+                return 60;
+            } else if (inlet_pwm == 2) {
+                return 80;
+            } else if (inlet_pwm == 3) {
+                return 99;
+            }
+            break;
+        case OUTLET1:
+            if (!zone1_pwm) {
+                return (g_adc_value / 256.0) * 100;
+            } else if (zone1_pwm == 1) {
+                return 60;
+            } else if (zone1_pwm == 2) {
+                return 80;
+            } else if (zone1_pwm == 3) {
+                return 99;
+            }
+            break;
+        case OUTLET2:
+            if (!zone2_pwm) {
+                return (g_adc_value / 256.0) * 100;
+            } else if (zone2_pwm == 1) {
+                return 60;
+            } else if (zone2_pwm == 2) {
+                return 80;
+            } else if (zone2_pwm == 3) {
+                return 99;
+            }
+            break;
+        case OUTLET3:
+            if (!zone3_pwm) {
+                return (g_adc_value / 256.0) * 100;
+            } else if (zone3_pwm == 1) {
+                return 60;
+            } else if (zone3_pwm == 2) {
+                return 80;
+            } else if (zone3_pwm == 3) {
+                return 99;
+            }
+            break;
+        default:
+            // Handle the default case if needed
+            break;
+    }
+    // Return a default value if the PIPE is not recognized
+    return 0;
+}
+
+
 // Add this new function
+volatile int inlet = 1;
+volatile int lastlast = 0;
 void update_display(void)
 {
-  char active_zone[10] = "None";
-  int active_pwm = 0;
-  int motor_rpm = 0;
+  char string_zone[10] = "INLET";
+//  int active_pwm = 0;
+//  int motor_rpm = 0;
 
-  // Determine active zone and PWM
-  if (hours >= inlet_start && hours < inlet_stop) {
-    strcpy(active_zone, "Inlet");
-    active_pwm = inlet_pwm;
-  } else if (hours >= zone1_start && hours < zone1_stop) {
-    strcpy(active_zone, "Zone 1");
-    active_pwm = zone1_pwm;
-  } else if (hours >= zone2_start && hours < zone2_stop) {
-    strcpy(active_zone, "Zone 2");
-    active_pwm = zone2_pwm;
-  } else if (hours >= zone3_start && hours < zone3_stop) {
-    strcpy(active_zone, "Zone 3");
-    active_pwm = zone3_pwm;
-  }
+	  // try inlet phase XOR outlet phase
+  	  // only set the active zones here
+	  if (inlet) {
+		  active_zone = INLET;
+		  set_pwm_motor(INLET);
+		  if (hours==inlet_stop && g_water_depth_final>=99) {
+			  inlet = 0;
+		  }
+	  }
+	  // when we are done with inlet, we choose any outlet based on current operation availability
+	  if (!inlet){
+		  // we check check that the outlet doesn't get repeated if others are available (fair distribution)
+		  if (within_time_interval(hours, zone1_start, zone1_stop) && active_zone != OUTLET1 && lastlast != OUTLET1) {
+			  lastlast = active_zone;
+			  active_zone = OUTLET1;
+			  set_pwm_motor(OUTLET1);
+		  }
+		  else if (within_time_interval(hours, zone2_start, zone2_stop) && active_zone != OUTLET2  && lastlast != OUTLET2) {
+			  lastlast = active_zone;
+			  active_zone = OUTLET2;
+			  set_pwm_motor(OUTLET2);
+		  }
+		  else if (within_time_interval(hours, zone3_start, zone3_stop) && active_zone != OUTLET3  && lastlast != OUTLET3) {
+			  lastlast = active_zone;
+			  active_zone = OUTLET3;
+			  set_pwm_motor(OUTLET3);
+		  }
+	  }
 
-  // Determine motor pwm%
-  int pwm_percent = 0;
-
-
-  switch(active_pwm) {
-    case 0: pwm_percent = (g_adc_value/256.0)*100; break;
-    case 1: pwm_percent = 60; break;
-    case 2: pwm_percent = 80; break;
-    case 3: pwm_percent = 99; break;
+  // Determine active zone string
+  switch(active_zone) {
+    case INLET:  sprintf(string_zone, "INLET"); break;
+    case OUTLET1: sprintf(string_zone, "ZONE 1"); break;
+    case OUTLET2: sprintf(string_zone, "ZONE 2"); break;
+    case OUTLET3: sprintf(string_zone, "ZONE 3"); break;
   }
 
 
   // motor rpm assumed to be updated
 
-  // depth assumed to be gotten
+  // depth assumed to be updated
 //  update_current_water_reservoir_depth();
 
-  // Format and send the display update, atomically
-  __disable_irq();
-  sprintf(txd_msg_buffer, "Time: %d:00 | Zone: %s | Motor Speed: %d%% | Motor RPM: %d | Reservoir: %d%%\r\n",
-          hours, active_zone, pwm_percent, g_current_rpm, g_water_depth_final);
-  __enable_irq();
+  // Format and send the display update
+//  __disable_irq();
+  sprintf(txd_msg_buffer, "WALL CLOCK: %d:00 | ZONE/INLET: %s | MOTOR %%PWM: %d | MOTOR RPM: %d | WATER DEPTH(%%): %d\r\n",
+          hours, string_zone, get_zone_pwm(active_zone), g_current_rpm, g_water_depth_final);
+//  __enable_irq();
   HAL_UART_Transmit(&huart6, (uint8_t*)txd_msg_buffer, strlen(txd_msg_buffer), 1000);
 }
 
@@ -306,12 +493,10 @@ uint8_t get_adc_value() {
     return ADC_CH9;
 }
 
+volatile int previous_depth = 1;
 int update_current_water_reservoir_depth(void)
 {
   // Simulate the water reservoir depth value; replace this with actual sensor reading if available
-  uint32_t local_time = 0;
-  uint32_t sensor_time = 0;
-  uint32_t distance = 0;
 
   // Trigger the sensor by sending a 10us pulse
   HAL_GPIO_WritePin(HCSR04_TRIG_GPIO_Port, HCSR04_TRIG_Pin, GPIO_PIN_SET);
@@ -329,9 +514,13 @@ int update_current_water_reservoir_depth(void)
   g_water_depth = (g_water_depth<=10) ? g_water_depth : 10.0;
   g_water_depth = 10.0 - g_water_depth;
 
-
+  previous_depth = g_water_depth_final;
   g_water_depth_final = ((g_water_depth / 10.0) < 1) ? (g_water_depth / 10.0)*100 : 99;
 
+  // update condition for special event, require 2 readings to be 0 to prevent outliers
+    if (g_water_depth_final==0 && previous_depth==0) {
+      res_empty = 1;
+    }
 
 //    sprintf(txd_msg_buffer, "Water Depth: %d\r\n", g_water_depth);
 //    HAL_UART_Transmit(&huart6, (uint8_t*)txd_msg_buffer, strlen(txd_msg_buffer), 1000);
@@ -369,6 +558,26 @@ void display_value_on_timer_board(int value)
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, (ones & 0x04) ? GPIO_PIN_SET : GPIO_PIN_RESET);  // DIGIT_B2 -> PB9
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, (ones & 0x08) ? GPIO_PIN_SET : GPIO_PIN_RESET); // DIGIT_B3 -> PB10
 }
+
+int within_time_interval(int current_time, int time_start, int time_stop) {
+    // Ensure the input times are within the valid range
+    if (current_time < 0 || current_time > 23 || time_start < 0 || time_start > 23 || time_stop < 0 || time_stop > 23) {
+        return 0;
+    }
+    // Case 1: Interval covers the full 24-hour period
+	if (time_start == time_stop) {
+		return 1;
+	}
+
+    // Case 2: Interval does not cross midnight
+    if (time_start < time_stop) {
+        return (current_time >= time_start && current_time < time_stop);
+    }
+    // Case 3: Interval crosses midnight
+    else {
+        return (current_time >= time_start || current_time < time_stop);
+    }
+}
 /* USER CODE END 0 */
 
 /**
@@ -378,7 +587,6 @@ void display_value_on_timer_board(int value)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  uint8_t timer_board_ones, timer_board_tens;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -405,9 +613,12 @@ int main(void)
   MX_TIM5_Init();
   MX_TIM1_Init();
   MX_TIM4_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
-  // Turn off the green LED (PA5) at startup
+  // Turn off the green LED (PA5), rgb, dc motor
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+  setLEDState(LED_OFF);
+  set_dc_motor(IN,0);
 
   // clear the uart terminal
   const char clearScreen[] = "\033[2J\033[H";
@@ -421,6 +632,7 @@ int main(void)
 
 
   // Turn on the green LED after setup mode
+  exit_while_loop = 0;
   while (1)
   {
     // Toggle the green LED
@@ -428,9 +640,8 @@ int main(void)
 
     // Wait for 200ms
     HAL_Delay(200);
-
     // Check if the external interrupt from pin C13 (the blue Nucleo push button) is triggered
-    if (exit_while_loop)
+    if (exit_while_loop>1)
     {
 
       // Break out of the while loop
@@ -439,6 +650,7 @@ int main(void)
   }
 
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
 
   // Start the timer for the clock counter, depth sensor
   HAL_TIM_Base_Init(&htim4);
@@ -446,22 +658,125 @@ int main(void)
   HAL_TIM_Base_Init(&htim1);
   HAL_TIM_Base_Start_IT(&htim1);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
+  // start timer for rpm sensor
+  HAL_TIM_Base_Init(&htim9);
+  HAL_TIM_Base_Start_IT(&htim9);
+  // timers for DC motor and SERVO motor
+  HAL_TIM_Base_Init(&htim3);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+  HAL_TIM_Base_Init(&htim5);
+  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+  set_pwm_motor(INLET);
 
   update_current_water_reservoir_depth();
+  g_adc_value = get_adc_value();
   update_display();
+
+
+  HAL_TIM_Base_Init(&htim9);
+  HAL_TIM_Base_Start_IT(&htim9);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  	  // set_dc_motor(IN,(g_adc_value/256.0)*100);
+	  	  // __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, val+=50);
+	  	  // if (val>2500) {val=500	;}
+	  	  // set_pwm_motor((val++)%4);
+
+	  	  // update res depth/7seg, and adc
+	  	  update_current_water_reservoir_depth();
+	  	  display_value_on_timer_board(g_water_depth_final);
+	  	  g_adc_value = get_adc_value();
+
+
+
+
+
+		  // Determine pump speed/dir based on active zone
+		    switch(active_zone) {
+		      case INLET:
+		    	  // if reservoir full stop the pump, check completion
+				  // otherwise pump during active time
+				  if (g_water_depth_final<99) {
+					  if (within_time_interval(hours, inlet_start, inlet_stop)) {
+						  set_dc_motor(IN, get_zone_pwm(INLET));
+					  } else {
+						  set_dc_motor(IN, 0);
+					  }
+
+				  } else {
+					  set_dc_motor(IN,0);
+				  }
+		    	  break;
+		      case OUTLET1:
+		    	  if (within_time_interval(hours, zone1_start, zone1_stop)) {
+					  set_dc_motor(OUT, get_zone_pwm(OUTLET1));
+				  } else {
+					  set_dc_motor(OUT, 0);
+				  }
+		    	  break;
+		      case OUTLET2:
+		    	  if (within_time_interval(hours, zone2_start, zone2_stop)) {
+					  set_dc_motor(OUT, get_zone_pwm(OUTLET2));
+				  } else {
+					  set_dc_motor(OUT, 0);
+				  }
+		      	  break;
+		      case OUTLET3:
+		    	  if (within_time_interval(hours, zone3_start, zone3_stop)) {
+					  set_dc_motor(OUT, get_zone_pwm(OUTLET3));
+				  } else {
+					  set_dc_motor(OUT, 0);
+				  }
+		      	  break;
+		    }
+
+	  	  // Determine active zone and PWM
+	  	//  if (hours >= inlet_start && hours < inlet_stop) {
+	  	//    strcpy(active_zone, "Inlet");
+	  	//    active_pwm = inlet_pwm;
+	  	//  } else if (hours >= zone1_start && hours < zone1_stop) {
+	  	//    strcpy(active_zone, "Zone 1");
+	  	//    active_pwm = zone1_pwm;
+	  	//  } else if (hours >= zone2_start && hours < zone2_stop) {
+	  	//    strcpy(active_zone, "Zone 2");
+	  	//    active_pwm = zone2_pwm;
+	  	//  } else if (hours >= zone3_start && hours < zone3_stop) {
+	  	//    strcpy(active_zone, "Zone 3");
+	  	//    active_pwm = zone3_pwm;
+	  	//  }
+
+	  	  // check special event (res depth==0)
+	  	  if (res_empty) {
+	  		  // stop all irq to halt system
+	  		  __disable_irq();
+	  		  // turn off builtin led and transmit reservoir empty
+	  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+	  		  HAL_UART_Transmit(&huart6, "\r\nRESERVOIR IS EMPTY\r\n", 22, 1000);
+
+	  		// disable pump
+	  		set_dc_motor(OUT,0);
+	  		  // sequence the RGB led in RGB in intervals of 500ms roughly
+	  		  while(1) {
+	  			  setLEDState(LED_RED);
+	  			for (int j = 0; j < 500000; j++) {};
+					setLEDState(LED_GREEN);
+					for (int j = 0; j < 500000; j++) {};
+					setLEDState(LED_BLUE);
+					for (int j = 0; j < 500000; j++) {};
+	  		  }
+
+
+	  	  }
+
+	  // delay margin to accommodate for sensor polling break time
+	  HAL_Delay(200);
     /* USER CODE END WHILE */
-	  update_current_water_reservoir_depth();
-	  //atomically
-	  __disable_irq();
-	  display_value_on_timer_board(g_water_depth_final);
-	  __enable_irq();
-	  HAL_Delay(100);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -777,6 +1092,44 @@ static void MX_TIM5_Init(void)
 }
 
 /**
+  * @brief TIM9 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM9_Init(void)
+{
+
+  /* USER CODE BEGIN TIM9_Init 0 */
+
+  /* USER CODE END TIM9_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+
+  /* USER CODE BEGIN TIM9_Init 1 */
+
+  /* USER CODE END TIM9_Init 1 */
+  htim9.Instance = TIM9;
+  htim9.Init.Prescaler = 16000-1;
+  htim9.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim9.Init.Period = 3000-1;
+  htim9.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim9.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  if (HAL_TIM_Base_Init(&htim9) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim9, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM9_Init 2 */
+
+  /* USER CODE END TIM9_Init 2 */
+
+}
+
+/**
   * @brief USART6 Initialization Function
   * @param None
   * @retval None
@@ -836,7 +1189,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
