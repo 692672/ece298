@@ -494,7 +494,7 @@ uint8_t get_adc_value() {
 }
 
 volatile int previous_depth = 1;
-int update_current_water_reservoir_depth(void)
+int update_current_water_reservoir_depth(void) //REPLACE THIS WITH US100 CODE INSTEAD!!!
 {
   // Simulate the water reservoir depth value; replace this with actual sensor reading if available
 
