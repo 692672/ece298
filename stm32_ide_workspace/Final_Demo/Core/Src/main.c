@@ -156,7 +156,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   }
 }
 
-void set_pwm_motor(PIPE p) {
+void set_pwm_motor(PIPE p) { //Might have to replace with htim1 as this might be for leds
 	switch (p) {
 	        case INLET:
 	        	// -90, 1ms pulse
@@ -529,7 +529,7 @@ int update_current_water_reservoir_depth(void) //REPLACE THIS WITH US100 CODE IN
   return g_water_depth_final;
 }
 
-void display_value_on_timer_board(int value)
+void display_value_on_timer_board(int value) //try replacing code with provided code here https://learn.uwaterloo.ca/d2l/le/content/1051354/viewContent/5567606/View
 {
     /* Legend
     A is tens digit
